@@ -1,0 +1,65 @@
+//@import 'scss/variables';
+:root {
+    $variable2: 1em;
+    --color-primary: blue;
+}
+
+$screen-size: 1200px;
+
+
+@mixin color {
+    color: red;
+    $screen-size: 900px;
+}
+
+@if $screen-size >=1024px {
+    .container {
+        background-color: darkgreen;
+    }
+
+}
+
+@else {
+    .container {
+        background-color: darkorange;
+    }
+}
+
+// * {
+//     margin: 0;
+//     box-sizing: border-box;
+//     font-family: 'Roboto', sans-serif;
+// }
+
+.container {
+
+
+    //@include variables.flex(space-between);
+
+    border: 2px solid var(--color-primary);
+    padding: 20px;
+    width: 90%;
+    height: 800px;
+    margin: 0 auto;
+    //background-color: variables.$variable1;
+
+    .cuadro {
+        //@include flex(center);
+        width: 200px;
+        height: 200px;
+        border: 2px solid blue;
+        background-color: aquamarine;
+
+        &:hover {
+            background-color: rgb(157, 127, 255);
+        }
+    }
+
+    @for $i from 1 through 5 {
+        ejemplo-#{$i} {
+            margin: $i * 10px
+        }
+    }
+}
+
+@import 'scss/texto';

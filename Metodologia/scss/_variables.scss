@@ -1,0 +1,11 @@
+$variable1: red;
+
+@mixin flex($jc) {
+    display: flex;
+    align-items: center;
+    justify-content: $jc;
+}
+
+@mixin color() {
+    color: coral
+}

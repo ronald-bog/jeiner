@@ -1,0 +1,43 @@
+:root {
+  --color-primary: blue;
+}
+
+.container {
+  background-color: darkgreen;
+}
+
+.container {
+  border: 2px solid var(--color-primary);
+  padding: 20px;
+  width: 90%;
+  height: 800px;
+  margin: 0 auto;
+}
+.container .cuadro {
+  width: 200px;
+  height: 200px;
+  border: 2px solid blue;
+  background-color: aquamarine;
+}
+.container .cuadro:hover {
+  background-color: rgb(157, 127, 255);
+}
+.container ejemplo-1 {
+  margin: 10px;
+}
+.container ejemplo-2 {
+  margin: 20px;
+}
+.container ejemplo-3 {
+  margin: 30px;
+}
+.container ejemplo-4 {
+  margin: 40px;
+}
+.container ejemplo-5 {
+  margin: 50px;
+}
+
+.texto2 {
+  color: red;
+}/*# sourceMappingURL=styles.css.map */

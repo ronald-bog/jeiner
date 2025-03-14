@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapsible Menu</title>
+    <link rel="stylesheet" href="styles2.css">
+
+</head>
+
+<body>
+
+    <menu>
+        <div class="nav">
+            <div class="option">Option 1
+                <ul>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                </ul>
+            </div>
+            <div class="option">Option 2
+                <ul>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                </ul>
+            </div>
+            <div class="option">Option 3
+                <ul>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                </ul>
+            </div>
+            <div class="option">Option 4
+                <ul>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                </ul>
+            </div>
+            <div class="option">Option 5</div>
+        </div>
+    </menu>
+
+    <script>
+        // Obtener todos los elementos con la clase 'option'
+        const options = document.querySelectorAll('.option');
+
+        // Iterar sobre cada opción y agregar un evento de clic
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                // Toggle de la clase 'active' para mostrar u ocultar el menú desplegable
+                const submenu = option.querySelector('ul');
+                submenu.classList.toggle('active');
+
+                // Si la clase 'active' está presente, aumenta la altura del menú
+                let totalHeight = 0;
+                options.forEach(option => {
+                    totalHeight += option.offsetHeight;
+                });
+
+                document.querySelector('.nav').style.height = submenu.classList.contains('active') ? totalHeight + submenu.offsetHeight + 'px' : totalHeight + 'px';
+            });
+        });
+    </script>
+
+</body>
+
+</html>

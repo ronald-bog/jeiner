@@ -1,0 +1,15 @@
+.navbar {
+    border: salmon solid 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    align-content: center;
+    height: 500px;
+
+    .area {
+        width: 33%;
+        display: flex;
+        justify-content: center;
+
+    }
+}

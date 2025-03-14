@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="header-logo"></div>
+        <nav>
+            <div class="nav-link">Option 1</div>
+            <div class="nav-link">Option 2</div>
+            <div class="nav-link">Option 3</div>
+            <div class="nav-link">Option 4</div>
+            <div class="nav-link">Option 5</div>
+        </nav>
+        <div class="header-anio">
+            Año: {{}}
+        </div>
+        <form action="/relogin/" method="POST">
+            <label for="idbs">
+                Cambiar Año:
+            </label>
+            <div class="form-select">
+                <select id="idbs" name="idfase">
+                    <option selected value="0" hidden>---</option>
+                    {% for key, value in request.session.dbs.items %}
+                    <option value={{key}}> {{value.fase}} </option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Ir">
+            </div>
+        </form>
+
+        <div class="header-burguer" onclick="toggleClase()">
+            <div class="barra superior"></div>
+            <div class="barra media"></div>
+            <div class="barra inferior"></div>
+        </div>
+
+    </header>
+    <menu>
+        <nav>
+            <div class="option">Option 1 <span>▼</span>
+                <ul>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                </ul>
+            </div>
+            <div class="option">Option 2 ▼
+
+                <ul>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                </ul>
+            </div>
+            <div class="option">Option 3
+                <ul>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                </ul>
+            </div>
+            <div class="option">Option 4
+                <ul>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                </ul>
+            </div>
+            <div class="option">Option 5</div>
+        </nav>
+    </menu>
+    <script>
+        function toggleClase() {
+            let elemento = document.querySelector('.header-burguer');
+            elemento.classList.toggle('abierto');
+            let menu = document.querySelector('menu')
+            menu.classList.toggle('abierto');
+        }
+        const options = document.querySelectorAll('.option');
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+
+                const submenu = option.querySelector('ul');
+                submenu.classList.toggle('active');
+
+                let totalHeight = 0;
+                options.forEach(option => {
+                    totalHeight += option.offsetHeight;
+                });
+
+                document.querySelector('.nav').style.height = submenu.classList.contains('active') ? totalHeight + submenu.offsetHeight + 'px' : totalHeight + 'px';
+            });
+        });
+    </script>
+</body>
+
+</html>

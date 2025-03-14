@@ -1,0 +1,201 @@
+$headerHeight: 5em;
+$color_borde_navsw: rgb(66, 48, 167);
+
+@mixin dFlex($jc, $hg, $ai: center) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    height: $hg;
+}
+
+@mixin mq900 {
+    @media (min-width: 900px) {
+        @content
+    }
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    @include dFlex(space-around, $headerHeight);
+    background-color: $color_borde_navsw;
+
+    /*_____________________ LOGO  */
+    .header-logo {
+        width: 20%;
+        height: inherit;
+        background-image: url('../favicon.jpg');
+        background-size: 4em;
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-color: burlywood;
+
+        @include mq900 {
+            width: 10%;
+        }
+    }
+
+    /*_____________________ NAV LINKS  */
+    nav {
+        display: none;
+
+        @include mq900 {
+            width: 50%;
+            @include dFlex(space-around, $headerHeight);
+        }
+    }
+
+    /*_____________________ AÑO  */
+    .header-anio {
+        width: 25%;
+        @include dFlex(center, $headerHeight);
+        font-size: 1em;
+        font-weight: bold;
+
+        @include mq900 {
+            width: 15%;
+        }
+    }
+
+    /*_____________________ FORMULARIO  */
+    form {
+        width: 40%;
+        flex-wrap: wrap;
+
+        @include mq900 {
+            width: 15%;
+        }
+
+        label {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-bottom: .5em;
+        }
+
+        .form-select {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            select {
+                height: 2em;
+                font-weight: bold;
+                text-align: center;
+                margin-right: .5em;
+
+                option {
+                    font-weight: bold;
+                    text-align: left;
+                }
+            }
+
+            input {
+                height: 2em;
+            }
+        }
+    }
+
+    /*_____________________ MENU BURGUER  */
+
+    .header-burguer {
+        width: 15%;
+        cursor: pointer;
+
+        @include mq900 {
+            display: none;
+        }
+
+        .barra {
+            width: 35px;
+            height: 2px;
+            margin: 8px;
+            background-color: yellowgreen;
+            transition: 200ms all ease-in-out;
+        }
+
+        &.abierto {
+            .barra {
+                background-color: yellowgreen;
+                ;
+
+                &.superior {
+                    transform: translateY(10px) rotateZ(-45deg);
+                }
+
+                &.media {
+                    width: 0;
+                }
+
+                &.inferior {
+                    transform: translateY(-10px) rotateZ(45deg);
+                }
+            }
+        }
+    }
+}
+
+menu {
+    width: 100vw;
+    background-color: grey;
+    position: relative;
+    left: -900px;
+    transition: left .5s ease-out;
+    padding: 1em;
+
+    @include mq900 {
+        display: none;
+    }
+
+    &.abierto {
+        display: flex;
+        left: 0px;
+    }
+
+    nav {
+
+        //display: flex;
+        //flex-direction: column;
+        .option {
+            span {
+                font-size: .5em;
+                color: white;
+                padding-top: 1em;
+
+            }
+        }
+
+
+        div ul {
+            display: none;
+        }
+
+        a {
+            display: flex;
+            padding: 1em 0;
+            color: white;
+            font-size: 1.1em;
+            transition: 300ms all ease-in-out;
+            text-decoration: none;
+            justify-content: center;
+
+            &.active {
+                color: black;
+                background-color: white;
+            }
+        }
+
+        hr {
+            width: 100%;
+            border-color: grey;
+        }
+    }
+}
+
+.active {
+    display: block !important;
+}

@@ -1,0 +1,167 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 5em;
+  background-color: rgb(66, 48, 167);
+  /*_____________________ LOGO  */
+  /*_____________________ NAV LINKS  */
+  /*_____________________ AÑO  */
+  /*_____________________ FORMULARIO  */
+  /*_____________________ MENU BURGUER  */
+}
+header .header-logo {
+  width: 20%;
+  height: inherit;
+  background-image: url("../favicon.jpg");
+  background-size: 4em;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-color: burlywood;
+}
+@media (min-width: 900px) {
+  header .header-logo {
+    width: 10%;
+  }
+}
+header nav {
+  display: none;
+}
+@media (min-width: 900px) {
+  header nav {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 5em;
+  }
+}
+header .header-anio {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5em;
+  font-size: 1em;
+  font-weight: bold;
+}
+@media (min-width: 900px) {
+  header .header-anio {
+    width: 15%;
+  }
+}
+header form {
+  width: 40%;
+  flex-wrap: wrap;
+}
+@media (min-width: 900px) {
+  header form {
+    width: 15%;
+  }
+}
+header form label {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0.5em;
+}
+header form .form-select {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+header form .form-select select {
+  height: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 0.5em;
+}
+header form .form-select select option {
+  font-weight: bold;
+  text-align: left;
+}
+header form .form-select input {
+  height: 2em;
+}
+header .header-burguer {
+  width: 15%;
+  cursor: pointer;
+}
+@media (min-width: 900px) {
+  header .header-burguer {
+    display: none;
+  }
+}
+header .header-burguer .barra {
+  width: 35px;
+  height: 2px;
+  margin: 8px;
+  background-color: yellowgreen;
+  transition: 200ms all ease-in-out;
+}
+header .header-burguer.abierto .barra {
+  background-color: yellowgreen;
+}
+header .header-burguer.abierto .barra.superior {
+  transform: translateY(10px) rotateZ(-45deg);
+}
+header .header-burguer.abierto .barra.media {
+  width: 0;
+}
+header .header-burguer.abierto .barra.inferior {
+  transform: translateY(-10px) rotateZ(45deg);
+}
+
+menu {
+  width: 100vw;
+  background-color: grey;
+  position: relative;
+  left: -900px;
+  transition: left 0.5s ease-out;
+  padding: 1em;
+}
+@media (min-width: 900px) {
+  menu {
+    display: none;
+  }
+}
+menu.abierto {
+  display: flex;
+  left: 0px;
+}
+menu nav .option span {
+  font-size: 0.5em;
+  color: white;
+  padding-top: 1em;
+}
+menu nav div ul {
+  display: none;
+}
+menu nav a {
+  display: flex;
+  padding: 1em 0;
+  color: white;
+  font-size: 1.1em;
+  transition: 300ms all ease-in-out;
+  text-decoration: none;
+  justify-content: center;
+}
+menu nav a.active {
+  color: black;
+  background-color: white;
+}
+menu nav hr {
+  width: 100%;
+  border-color: grey;
+}
+
+.active {
+  display: block !important;
+}/*# sourceMappingURL=styles.css.map */

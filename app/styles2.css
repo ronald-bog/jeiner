@@ -1,0 +1,12 @@
+menu nav {
+  background-color: black;
+  color: yellow;
+  padding: 10px;
+}
+menu nav div ul {
+  display: none;
+}
+
+.active {
+  display: block !important;
+}/*# sourceMappingURL=styles2.css.map */

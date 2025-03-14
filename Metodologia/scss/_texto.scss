@@ -1,0 +1,6 @@
+//@use './variables' as v;
+
+.texto2 {
+    @include color;
+    //color: v.$variable1;
+}

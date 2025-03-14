@@ -1,0 +1,15 @@
+menu {
+    nav {
+        background-color: black;
+        color: yellow;
+        padding: 10px;
+
+        div ul {
+            display: none;
+        }
+    }
+}
+
+.active {
+    display: block !important;
+}
